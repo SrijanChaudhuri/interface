@@ -65,10 +65,8 @@ def evaluate_component_against_sop(component_specs: str, sop: str) -> str:
     Provide a clear, concise evaluation and suggestions for corrections if necessary.
     """
     prompt = (
-        "You are an expert in technical documentation and product specifications.\n"
         "You are provided with a component's specifications and a partial SOP guideline.\n"
-        "Analyze the specifications to determine whether they conform to the SOP.\n"
-        "Identify any significant deviations or areas for improvement.\n\n"
+        "Analyze the specifications to determine whether they conform to the SOP range provided.\n"
         f"Component Specifications:\n{component_specs}\n\n"
         f"SOP Guideline:\n{sop}\n\n"
         "Provide a clear, concise evaluation and suggestions for corrections if necessary."
