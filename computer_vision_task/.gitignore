@@ -1,0 +1,69 @@
+# Virtual Environment
+env/
+venv/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+gfresh_env/
+
+fresh_env/
+.gradio/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+.history
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Data files (depend on your project structure)
+data/
+*.h5
+*.pkl
+*.model
+*.weights
+*.pt
+*.pth
+
+# Logs
+logs/
+*.log
+
+# OS-specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

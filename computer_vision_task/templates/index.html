@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blueprint Graph Viewer</title>
+    <style>
+        /* Simple styling for loading overlay */
+        #loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+            text-align: center;
+            padding-top: 20%;
+            font-size: 2em;
+            color: #333;
+        }
+        .graph-container {
+            margin-bottom: 40px;
+        }
+    </style>
+    <script>
+        // Show loading overlay when the form is submitted.
+        function showLoading() {
+            document.getElementById('loading-overlay').style.display = 'block';
+            return true; // proceed with submission
+        }
+    </script>
+</head>
+<body>
+    <h1>Blueprint Graph Viewer</h1>
+    
+    <form method="POST" onsubmit="return showLoading();">
+        <label for="pdf_path">Enter PDF file path:</label>
+        <input type="text" id="pdf_path" name="pdf_path" placeholder="data/p&id/diagram.pdf" required>
+        <button type="submit">Process PDF</button>
+    </form>
+    
+    <!-- Loading overlay -->
+    <div id="loading-overlay">Loading, please wait...</div>
+    
+    {% if error %}
+      <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    
+    {% if graph_images %}
+      <h2>Graphs from PDF</h2>
+      {% for page_num, img in graph_images %}
+        <div class="graph-container">
+            <h3>Page {{ page_num }}</h3>
+            <img src="data:image/png;base64,{{ img }}" alt="Graph for page {{ page_num }}">
+        </div>
+      {% endfor %}
+    {% endif %}
+</body>
+</html>
